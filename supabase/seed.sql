@@ -1,0 +1,2 @@
+-- Seed data for local testing
+-- Demo Profiles & Posts can be inserted here
