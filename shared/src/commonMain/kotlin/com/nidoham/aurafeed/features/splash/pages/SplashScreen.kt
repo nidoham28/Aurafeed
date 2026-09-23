@@ -16,6 +16,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import aurafeed.shared.generated.resources.Res
 import aurafeed.shared.generated.resources.app_icon
+import com.nidoham.aurafeed.core.navigation.Auth
 import com.nidoham.aurafeed.core.navigation.Shell
 import com.nidoham.aurafeed.core.navigation.Splash
 import kotlinx.coroutines.delay
@@ -25,7 +26,7 @@ import kotlin.time.Duration.Companion.milliseconds
 private const val SPLASH_DELAY = 3000L
 
 @Composable
-fun SplashPage(navController: NavHostController) {
+fun SplashScreen(navController: NavHostController) {
     Box(
         modifier = Modifier.fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
@@ -40,7 +41,7 @@ fun SplashPage(navController: NavHostController) {
 
     LaunchedEffect(Unit) {
         delay(SPLASH_DELAY.milliseconds)
-        navController.navigate(Shell){
+        navController.navigate(Auth){
             popUpTo(Splash){
                 inclusive = true
             }
@@ -52,5 +53,5 @@ fun SplashPage(navController: NavHostController) {
 @Composable
 fun SplashPagePreview() {
     val navController: NavHostController = rememberNavController()
-    SplashPage(navController = navController)
+    SplashScreen(navController = navController)
 }

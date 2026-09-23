@@ -6,11 +6,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.nidoham.aurafeed.core.navigation.Auth
 import com.nidoham.aurafeed.core.navigation.Shell
 import com.nidoham.aurafeed.core.navigation.Splash
 import com.nidoham.aurafeed.core.theme.AppTheme
+import com.nidoham.aurafeed.features.auth.pages.AuthScreen
 import com.nidoham.aurafeed.features.shell.pages.ShellPage
-import com.nidoham.aurafeed.features.splash.pages.SplashPage
+import com.nidoham.aurafeed.features.splash.pages.SplashScreen
 import ui.theme.AppThemeManager
 
 @Composable
@@ -23,12 +25,18 @@ fun App() {
 
         NavHost(navController = navController, startDestination = Splash){
             composable<Splash> {
-                SplashPage(navController)
+                SplashScreen(navController)
+            }
+
+            composable<Auth> {
+                AuthScreen(navController)
             }
 
             composable<Shell> {
                 ShellPage(navController)
             }
+
+
         }
     }
 }
