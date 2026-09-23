@@ -1,9 +1,0 @@
-project_id = "aurafeed"
-
-[api]
-enabled = true
-port = 54321
-schemas = ["public", "storage", "graphql_public"]
-
-[db]
-port = 54322
