@@ -4,9 +4,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import io.aurafeed.app.navigation.AppNavigation
 import io.aurafeed.app.ui.theme.AurafeedTheme
 import org.jetbrains.compose.reload.DevelopmentEntryPoint
 
@@ -15,10 +16,12 @@ import org.jetbrains.compose.reload.DevelopmentEntryPoint
 @DevelopmentEntryPoint
 fun App() {
     AurafeedTheme {
-        Box(Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)) {
-
+        Box(
+            Modifier
+                .fillMaxSize()
+                .background(MaterialTheme.colorScheme.background),
+        ) {
+            AppNavigation()
         }
     }
 }
